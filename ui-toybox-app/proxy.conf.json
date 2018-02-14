@@ -1,0 +1,6 @@
+{
+  "/toybox/backend": {
+    "target": "http://localhost:28380",
+    "secure": false
+  }
+}

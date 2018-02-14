@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {HttpRequestService} from "../../app/services/http-request.service";
 
 @Component({
   selector: 'page-home',
@@ -7,8 +8,11 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  message;
+  constructor(public navCtrl: NavController, public httpService: HttpRequestService) {}
 
+  ngOnInit() {
+      this.httpService.test().subscribe(data => this.message = data.message);
   }
 
 }
